@@ -85,12 +85,15 @@
 
 .note-finder .dis {
   background-color: gray;
-  color: rgb(78, 77, 77);
+  color: rgb(183 183 183);
   transition: none;
+  border: 1px solid rgb(183 183 183);
+  cursor: not-allowed;
 }
 
 .note-finder .dis small {
   font-size: 0.8rem;
+  display: block;
 }
 .note-finder .dis:hover {
   background-color: gray;
@@ -102,5 +105,3 @@
 .note-form .searches input {
   width: 100%;
 }
-
-

@@ -5,6 +5,7 @@ export default function AllNotes(props) {
   const { allnotes } = props;
   return (
     <div className='notes-area'>
+      {props.children}
       {allnotes.map(note => (
         <div className='note-card' key={note.id}>
           <p>ID: {note.id}</p>

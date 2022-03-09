@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import AllNotes from './AllNotes'
 import NoteFinder from './NoteFinder'
 import styles from './NewNoteForm.css'
+import dataNotes from '../data/note-data'
 
 export default function NewNoteForm() {
   const [showing, setShowing] = useState(true);
   const [oneChecked, setOneChecked] = useState(false)
-  const [notes, setNotes] = useState([])
+  const [notes, setNotes] = useState(dataNotes || []);
   const [note, setNote] = useState({
     id: '',
     title: '',
@@ -45,7 +46,7 @@ export default function NewNoteForm() {
     runChecks()
     if (oneChecked) {
       saveNote(note)
- 
+
       alert('Note Saved')
     } else {
       dontSaveNote()

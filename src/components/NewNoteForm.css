@@ -147,17 +147,17 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(231, 231, 231, 0.87);
   overflow-y: scroll;
 }
 
 .modal .closer {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 10%;
   font-size: 24px;
   color: white;
-  background-color: #ff0000;
+  background-color: #6297e7;
   border-radius: 100%;
   width: 50px;
   height: 50px;
@@ -166,16 +166,19 @@
   align-items: center;
   cursor: pointer;
   transition: 0.5s;
+  animation: pulsate 1.5s infinite;
 }
 
 .modal .closer:hover {
-  background-color: #ff4d4d;
+  background-color: #8bb4f3;
+  animation: none;
 }
 
 .print-area {
   width: 70%;
   margin: 100px auto;
   background: white;
+  border: 2px solid #6297e7;
   border-radius: 3px;
 }
 
@@ -210,4 +213,30 @@
   align-items: center;
   margin: 10px 0;
   gap: 10px;
+}
+
+@media only screen and (max-width: 820px) {
+  .note-form button {
+    font-size: 1rem;
+  }
+
+  .modal .closer {
+    animation: none;
+  }
+}
+
+/* keyframes animation pulsate */
+@keyframes pulsate {
+  0% {
+    /* transform: scale(1); */
+    box-shadow: 0 0 0 0 rgba(111, 168, 233, 0.2);
+  }
+  50% {
+    /* transform: scale(1.1); */
+    box-shadow: 0 0 1px 10px rgba(36, 55, 77, 0.2);
+  }
+  100% {
+    /* transform: scale(1); */
+    box-shadow: 0 0 0 0 rgba(111, 168, 233, 0.2);
+  }
 }

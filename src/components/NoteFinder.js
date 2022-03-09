@@ -9,6 +9,7 @@ export default function NoteFinder(props) {
   const [search, setSearch] = useState('');
   const [filteredData, setFilteredData] = useState(data);
   const [printing, setPrinting] = useState(false);
+  const [seeAllNotes, setSeeAllNotes] = useState(false);
 
 
   const scrollIn = () => {
@@ -18,9 +19,13 @@ export default function NoteFinder(props) {
     });
   }
 
+  const seeAll = () => {
+    setSeeAllNotes(true)
+    scrollIn()
+  }
+
   const printAll = () => {
     setPrinting(true);
-    console.log(filteredData)
   }
 
   const closeModal = () => {
@@ -47,14 +52,22 @@ export default function NoteFinder(props) {
         return itemDate <= new Date(date) && itemDate >= newDate;
       }));
 
+    setSeeAllNotes(false)
+
   };
 
 
   return (
     <div className='note-finder'>
       <div className='searches'>
-        {filteredData.length > 0 && <button onClick={printAll}>Print all notes for selected week</button>}
-        {filteredData.length <= 0 && <button className='dis' disabled onClick={printAll}>Print Week <small>Please select a date to start from</small></button>}
+        {
+          filteredData.length > 0 && search.length > 0
+            ?
+            <button onClick={printAll}>Print all notes for selected week</button>
+            :
+            <button className='dis' disabled onClick={printAll}>Print Week <small>Please select a date to start from</small></button>
+        }
+
         <label>
           Retrieve notes for a week from date selected:
           <input
@@ -65,8 +78,10 @@ export default function NoteFinder(props) {
           />
         </label>
       </div>
-      {filteredData.length > 0 ? <AllNotes allnotes={filteredData} /> : <div className='notes-area'><p>No notes found</p></div>}
+
+      {filteredData.length > 0 && search.length > 0 ? <AllNotes allnotes={filteredData} /> : <div className='notes-area'><h3>Nothing to show.</h3><button className='nope' onClick={seeAll} >See All Notes?</button></div>}
       {printing && <div className='modal' ><span className='closer' onClick={closeModal}>X</span><Print data={filteredData} /></div>}
+      {seeAllNotes && <AllNotes allnotes={data}>All Notes</AllNotes>}
     </div>
 
   )
