@@ -1,0 +1,106 @@
+.searches {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 70%;
+  margin: 20px auto;
+}
+
+.notes-area {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+
+  gap: 10px;
+}
+
+.note-card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: left;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #ececec;
+  border: 1px solid #ccc;
+}
+
+.note-finder .note-card h3 {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  display: block;
+}
+
+.note-finder .note-card p {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  display: block;
+}
+
+.note-finder .note-card .date {
+  width: 100px;
+}
+
+.note-finder .note-card .desc {
+  max-width: 460px;
+  min-width: 400px;
+  max-height: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.high-urgency {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #ff0000;
+}
+
+.medium-urgency {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #eeff00;
+}
+
+.low-urgency {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #08d412;
+}
+
+.note-finder .dis {
+  background-color: gray;
+  color: rgb(78, 77, 77);
+  transition: none;
+}
+
+.note-finder .dis small {
+  font-size: 0.8rem;
+}
+.note-finder .dis:hover {
+  background-color: gray;
+}
+.note-form .searches label,
+.note-form .searches button {
+  width: 50%;
+}
+.note-form .searches input {
+  width: 100%;
+}
+
+

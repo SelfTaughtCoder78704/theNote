@@ -1,0 +1,213 @@
+.note-form {
+  width: 100%;
+}
+
+.note-form h3 {
+  text-align: left;
+  width: 70%;
+  margin: 20px auto 0;
+  padding-left: 20px;
+  color: #6297e7;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.note-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.note-form input,
+.note-form textarea {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ececec;
+  margin: 0 auto 10px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+.note-form .urgency {
+  width: 70%;
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.note-form label {
+  width: fit-content;
+  font-size: 12px;
+}
+
+.note-form .urgency input {
+  width: unset;
+  margin-top: 10px;
+}
+.note-form .urgency p {
+  color: #6297e7;
+  font-weight: 900;
+}
+.note-form #high,
+.note-form #medium,
+.note-form #low {
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+.note-form #high::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff0000;
+  border-radius: 100%;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.note-form #medium::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #eeff00;
+  border-radius: 100%;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.note-form #low::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #08d412;
+  border-radius: 100%;
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.note-form #high:checked::before,
+.note-form #medium:checked::before,
+.note-form #low:checked::before {
+  opacity: 1;
+  border: 1px solid black;
+}
+
+.note-form #high:hover::before,
+.note-form #medium:hover::before,
+.note-form #low:hover::before {
+  opacity: 1;
+}
+
+.note-form .grouped {
+  width: 135px;
+  display: flex;
+  margin: 0 20px;
+}
+
+.note-form button {
+  width: 70%;
+  background: #6297e7;
+  color: white;
+  font-size: 24px;
+  border-radius: 3px;
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.note-form button:hover {
+  background: #8bb4f3;
+}
+
+.warning {
+  border: 1px solid #ff0000 !important;
+  border-radius: 3px;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
+}
+
+.modal .closer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  background-color: #ff0000;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.modal .closer:hover {
+  background-color: #ff4d4d;
+}
+
+.print-area {
+  width: 70%;
+  margin: 100px auto;
+  background: white;
+  border-radius: 3px;
+}
+
+.print-area h3 {
+  width: 100%;
+  margin: 0;
+  align-items: unset;
+  padding: 0;
+}
+.note-line {
+  width: 100%;
+  display: block;
+  padding: 20px;
+}
+
+.print-area .desc {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+.print-area .date {
+  width: 100%;
+}
+
+.status {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+  text-align: center;
+  align-items: center;
+  margin: 10px 0;
+  gap: 10px;
+}
